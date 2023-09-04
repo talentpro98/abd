@@ -1,1 +1,7 @@
 test drop rate
+[[inputs.exec]]
+commands = ["bash /etc/telegraf/telegraf.d/scrip.sh" ]
+name_override = "drop rate"
+timeout = "5s"
+data_format = "value"
+data_type = "string"
