@@ -5,4 +5,6 @@ name_override = "drop rate"
 timeout = "5s"
 data_format = "value"
 data_type = "string"
-grep drop | grep -oP "(\d+(\.\d+)?(?=%))"
+
+
+tac "abcd.log" | grep -m1 "drop" | awk '{ print $14 }' | tr -d '%'
