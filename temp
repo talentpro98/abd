@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Thiết lập giá trị mới cho thời gian uptime (ví dụ: 1 giờ)
+new_uptime_seconds=$((60*60))
+
+# Chuyển đổi giá trị mới sang định dạng uptime
+new_uptime=$(echo "scale=2; $new_uptime_seconds / 60" | bc)
+
+# Ghi đè giá trị mới vào tệp /proc/uptime
+echo "$new_uptime $new_uptime" > /proc/uptime
+
+# Hiển thị thông báo thành công
+echo "Giả mạo thời gian uptime thành công."
